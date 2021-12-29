@@ -1,0 +1,38 @@
+{% extends "_layout.html" %}
+{% block content_game %}
+<h1 class="text-center">Table of Game</h1>
+<br>
+
+<table class="table table-secondary table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Brand</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for game in game_list %}
+    <tr>
+        <td>{{ game.id }}</td>
+        <td>{{ game.name }}</td>
+        <td>{{ game.brand }}</td>
+        <td>
+            <form action="{{ url_for('read_details', id=game.id) }}" method="GET">
+                <input class="btn btn-primary" type="submit" value="View">
+            </form>
+        </td>
+        <td>
+            <form action="{{ url_for('update_game', id=game.id) }}" method="GET">
+                <input class="btn btn-success" type="submit" value="Edit">
+            </form>
+        </td>
+        <td>
+            <form action="{{ url_for('delete_game', id=game.id) }}" method="GET">
+                <input class="btn btn-danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

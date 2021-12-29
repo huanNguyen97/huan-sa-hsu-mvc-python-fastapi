@@ -1,0 +1,32 @@
+{% extends "_layout.html" %}
+{% block content_game %}
+<form action="{{ url_for('update_game', id=game.id) }}" method="POST">
+    <table>
+        <tr>
+            <th>Index</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="name" value="{{ game.name }}" /></td>
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td><input type="text" name="category" value="{{ game.category }}" /></td> 
+        </tr>
+        <tr>
+            <td>Brand</td>
+            <td><input type="text" name="brand" value="{{ game.brand }}" /></td>  
+        </tr>
+        <tr>
+            <td>Year released</td>
+            <td><input type="text" name="year_released" value="{{ game.year_released }}" /></td>   
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input type="text" name="price" value="{{ game.price }}" /></td> 
+        </tr>
+    </table>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

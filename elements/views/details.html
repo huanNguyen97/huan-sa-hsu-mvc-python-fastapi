@@ -1,0 +1,39 @@
+{% extends "_layout.html" %}
+{% block content_game %}
+<h1 class="text-center">Table details of {{ game.name }}</h1>
+<br><br>
+<table class="table table-warning table-striped">
+    <thead>
+        <tr>
+            <th>Attribute</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ID</td>
+            <td>{{ game.id }}</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>{{ game.name }}</td>
+        </tr>
+        <tr>
+            <td>Catgory</td>
+            <td>{{ game.category }}</td>
+        </tr>
+        <tr>
+            <td>Brand</td>
+            <td>{{ game.brand }}</td>
+        </tr>
+        <tr>
+            <td>Year released</td>
+            <td>{{ game.year_released }}</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>{{ game.price }}$</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
